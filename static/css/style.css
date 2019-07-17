@@ -1,0 +1,63 @@
+body{
+	background-image: url("../img/bg.png");
+	background-repeat: no-repeat;
+	-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+	background-size: cover; /* version standardisée */
+	background-size: 100%;
+	background-color: #fff
+	align:center;
+	margin-top:50px;
+	font-family: Helvetica, sans-serif;
+	color : #fff;
+}
+
+.arondi{
+	border-radius: 40px;
+}
+
+.spacer{
+	margin-bottom: 50px;
+}
+
+fieldset
+{
+  max-width:99%;
+  padding:16px;	
+  
+}
+.legend1
+{
+  margin-bottom:0px;
+  margin-left:16px;
+  color: #fff;
+}
+
+legend{
+	display: block;
+    width: 14%; 
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: inherit;
+    color: #fff;
+    border: 0;
+}
+
+.fieldset1
+{
+    border:2px solid #007bff;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+}
+
+.jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+	text-align : center;
+	background-color: #007bff;
+}
+
+.modal{
+	color:#000;
+}
