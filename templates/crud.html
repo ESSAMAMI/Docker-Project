@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8"/>
-		<title>Ajc-Fakir-Calculette</title>
+		<title>CRUD - CARS</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -14,53 +14,64 @@
 
 		<div class="container">
 			<div class="jumbotron">
-				<h2>Liste élèves</h2>
+				<h2><b>TRY TO WIN A CAR</b></h2>
 				<p>C.R.U.D</p>
 			</div>
 
-
 			<div class="row spacer">
 				<div class="col-xs-12">
+					{% if person is defined %}
 					<table class="table blue-grey lighten-4" id="tabEleves">
 						<thead>
 							<tr class="table-dark">
 							  <th scope="col">#</th>
-							  <th scope="col">Nom</th>
-							  <th scope="col">Prenom</th>
-							  <th scope="col">Age</th>
-							  <th scope="col">Actions</th>
+							  <th scope="col">NAME</th>
+							  <th scope="col">SURNAME</th>
+							  <th scope="col">AGE</th>
+							  <th scope="col">ADDRESS</th>
+								<th scope="col">WINNER</th>
+								<!-- <th scope="col">CARS</th> -->
 							</tr>
 						</thead>
-						<tbody class="table-dark">
 
-						</tbody>
+							<tbody class="table-dark">
+									<tr>
+											{% for array_p in person %}
+												<tr>
+													{% for element in array_p %}
+														<td>{{ element }}</td>
+													{% endfor %}
+												</tr>
+											{% endfor %}
+									</tr>
+							</tbody>
+						{% endif %}
 					</table>
-					<button type="button" class="btn btn-info " onclick="showForm()">Ajouter</button>
 				</div>
 			</div>
 
 
 			<div class="row" id="divForm">
 				<fieldset class="fieldset1" id="formEleve">
-					<legend  id="legende">Ajouter un élève</legend>
-					<form class="form-inline" action="crud.html" id="form">
+					<legend  id="legende">GO INSCRIPTION</legend>
+					<form class="form-inline" action="/add_consumer" id="form" method="POST">
 						<div class="form-group">
-						  <label for="id">Id:</label>
-						  <input type="id" class="form-control" id="idForm" value ="" placeholder="id" name="id">
+						  <label for="nom">NAME:</label>
+						  <input type="nom" class="form-control" id="nomForm" value ="" placeholder="NOM" name="name">
 						</div>
 						<div class="form-group">
-						  <label for="nom">Nom:</label>
-						  <input type="nom" class="form-control" id="nomForm" value ="" placeholder="Nom" name="nom">
+						  <label for="prenom">SURNAME</label>
+						  <input type="prenom" class="form-control" id="prenomForm" value ="" placeholder="SURNAME" name="surname">
 						</div>
 						<div class="form-group">
-						  <label for="prenom">Prénom:</label>
-						  <input type="prenom" class="form-control" id="prenomForm" value ="" placeholder="Prénom" name="prenom">
+						  <label for="age">AGE</label>
+						  <input type="age" class="form-control" id="ageForm" value ="" placeholder="AGE" name="age">
 						</div>
 						<div class="form-group">
-						  <label for="age">Age:</label>
-						  <input type="age" class="form-control" id="ageForm" value ="" placeholder="Age" name="age">
+						  <label for="age">ADDRESS</label>
+						  <input type="age" class="form-control" id="ageForm" value ="" placeholder="ADDRESS" name="address">
 						</div>
-						<button type="button" class="btn btn-info" onclick="add()">
+						<button type="submit" class="btn btn-info" onclick="add()">
 							<span class="glyphicon glyphicon-ok"></span>
 						</button>
 						<button type="button" class="btn btn-primary" onclick="hideForm()">
@@ -69,3 +80,6 @@
 					</form>
 				</fieldset>
 			</div>
+
+		</body>
+	</html>
